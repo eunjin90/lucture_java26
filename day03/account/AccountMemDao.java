@@ -1,6 +1,6 @@
 package account;
 
-public class AccountMemDao {
+public class AccountMemDao implements AccountDao{
 	public static int noSeq = 111111;
 	private Account[] accountDB = new Account[100];
 	private int numAccount;
@@ -67,5 +67,23 @@ public class AccountMemDao {
 			}
 		}
 		return false; // 계좌번호 못 찾음
+	}
+
+	@Override
+	public Account selectByNo(int accountNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Account[] selectByOwner(String owner) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updateBalance(int accountNo, int amount) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

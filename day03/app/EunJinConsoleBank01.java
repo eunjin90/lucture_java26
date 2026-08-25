@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 import account.Account;
 import account.AccountMemDao;
+import account.AccountDao;
+import account.AccountFileDao;
 
 public class EunJinConsoleBank01 {
 	
 	static String[] startMenu = {"0.종료", "1.계좌등록", "2.계좌조회", "3.입금", "4.출금", "5.계좌삭제"};
 	static Scanner sc = new Scanner(System.in);
-	static AccountMemDao accountDao = new AccountMemDao();
+	static AccountDao accountDao = new AccountMemDao();
 
 	public static void main(String[] args) {
 		welcomeMessage();
