@@ -6,12 +6,15 @@ import java.util.Scanner;
 import account.Account;
 import account.AccountListDao;
 import account.AccountService;
+import member.MemberFileMapDao;
+import member.MemberService;
 
 public class EunJinConsoleBank01 {
 	
 	static String[] startMenu = {"0.종료", "1.계좌등록", "2.계좌조회", "3.입금", "4.출금"};
 	static Scanner sc = new Scanner(System.in);
 	static AccountService aservice = new AccountService(new AccountListDao());
+	static MemberService mservice = new MemberService(new MemberFileMapDao());
 	
 	public static void main(String[] args) {
 		welcomeMessage();

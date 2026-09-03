@@ -2,14 +2,32 @@ package app;
 
 import java.util.List;
 
+import account.FileDB;
 import member.Member;
 import member.MemberDao;
+import member.MemberFileMapDao;
 import member.MemberMapDao;
 import member.MemberService;
 
 public class MemberTest {
 	public static void main(String[] args) {
-		testService();
+//		testService();
+		testFileOperation();
+	}
+	
+	static void testFileOperation() {
+		String dbFilename = "memberDB.txt";
+		
+		MemberDao dao = new MemberFileMapDao(dbFilename);
+		
+		// insert
+//		dao.insertMember(new Member("aaa", "aaa", "1234"));
+//		dao.insertMember(new Member("ccc", "ccc", "1234"));
+		
+		FileDB fdb = (FileDB)dao;
+//		fdb.saveDB();
+		fdb.loadDB();
+		printMemberList(dao.selectAll());
 	}
 	
 	static void testService() {
